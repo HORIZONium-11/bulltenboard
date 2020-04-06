@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="profile" class="col-md-6 offset-md-3">
+<form action='' method='POST' enctype="multipart/form-data">{% csrf_token %}
+
+
+<input type='hidden' name='author' value='{{ user.username }}'>
+<input type='hidden' name='url_code' value='{{ user.username }}'>
+
+<p>プロフィール画像：<input type='file' name='icon'></p>
+<p class="create_content"> <textarea type='text' name='introduce' cols="30" rows="10" placeholder="紹介"></textarea></p>
+<p class="attention">
+  すべての項目を入力してください
+</p>
+
+<input type='submit' value='作成する'>
+</form>
+</div>
+{% endblock content %}

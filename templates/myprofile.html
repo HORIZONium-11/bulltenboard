@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block customcss %}
+{% endblock customcss %}
+
+{% block content %}
+
+<div class ="top_title">
+    <h1>{{user.username}}</h1>
+</div>
+
+<div class='container'>
+
+    <div class="alert alert-success" role="alert">
+
+            {% if object.icon.url %}
+            <p class="image"><img src='{{object.icon.url}}' width=300 ></p>
+            {% else %}
+            画像：未設定
+            {% endif %}
+    
+            {% if object.introduce %}
+            <p class="introduce">{{object.introduce}}</p>
+            {% else %}
+            紹介：未設定
+            {% endif %}
+
+            <a href="{% url 'profile_edit' object.pk %} " class="btn btn-default btn-lg active" role="button">編集</a>
+    </div>
+    {% for item in post_all %}
+    
+    <div class="alert alert-success" role="alert">
+        <p><a href="{% url 'allprofile' item.pk %}">Name：{{item.author}}</a></p>
+
+        {% if item.title%}
+            <p class="title">{{item.title}}</p>
+        {%else%}
+        {%endif%}
+
+        {% if item.content%}
+        <p class="content">{{item.content}}</p>
+        {%else%}
+        {%endif%}
+
+        {% if item.images%}
+        <p class="img"><img src='{{item.images.url}}' ></p>
+        {% else %}
+        {% endif %}
+
+        <a href="{% url 'post_edit' item.pk %} " class="btn btn-default btn-lg active" role="button">編集</a>
+
+        <a href="{% url 'delete' item.pk %} " class="btn btn-default btn-lg active" role="button">削除</a>
+
+        <a href="{% url 'good' item.pk %}" class="btn btn-primary" role="button" aria-pressed="true">いいね：{{item.good}}</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}

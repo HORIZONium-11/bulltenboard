@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class ="top_title">
+  <h1>アウトプット掲示板とは</h1>
+</div>
+{% if user.is_authenticated %}
+<div id="about" class="col-md-6 offset-md-3">
+  <h1 class="big">
+  学んだことをひたすらアウトプットする場所です
+  </h1>
+  <p class="sub">何かを学習したらこの掲示板に学んだことを投稿しましょう！分野は何でもオッケーです！</p>
+
+  <h1 class="big">
+  アウトプットするメリットは?
+  </h1>
+  <p class="sub">友達に教えたり問題集をやった内容は覚えているのに、この前読んだ本の内容は思い出せない、といった経験はありませんか？<br>
+    そうなんです、人は頑張って思い出そうとしたときに記憶に定着しやすくなります。<br>
+    そして、思い出すのにぴったりなのがアウトプットなのです！
+  </p>
+
+{% else %}
+ログインしてください
+{% endif %}
+{% endblock content %}

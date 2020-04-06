@@ -1,0 +1,130 @@
+/* top_title */
+div.top_title h1{
+  position: relative;
+  padding: 0.5em;
+  background: #a6d3c8;
+  color: white;
+}
+
+div.top_title h1::before{
+  position: absolute;
+  content: '';
+  top: 100%;
+  left: 0;
+  border: none;
+  border-bottom: solid 15px transparent;
+  border-right: solid 20px rgb(149, 158, 155);
+}
+
+p.title ,p.content{
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  border: double 5px #4ec4d3;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+p.title{
+  text-align: center;
+}
+
+p.content{
+  font-size: 16px;
+  font-weight: 400;
+  color: black;
+}
+
+p.img{
+  text-align: center;
+}
+
+p img{
+  max-width: 300px;
+  height: auto;
+  border-radius: 10%;
+}
+
+/* create */
+
+div#create,div.profile,div#about {
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  border: double 5px #4ec4d3;
+  text-align: center;
+}
+
+/* profile */
+  p.introduce{
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #5989cf;
+    background: #c6e4ff;
+    border-bottom: solid 6px #aac5de;
+    border-radius: 9px;
+}
+
+p.image{
+  text-align: center;
+}
+
+
+/* About */
+h1.big{
+  padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    color: #6091d3;/*文字色*/
+    background: #FFF;
+    border: solid 3px #6091d3;/*線*/
+    border-radius: 10px;/*角の丸み*/
+    text-align: center;
+}
+
+p.sub{
+  text-align: center;
+}
+
+/* signup login */
+
+
+
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+a.new{
+  margin-left: 20px;
+}
+
+/* register */
+p.attention{
+  color: orange;
+  text-decoration : underline;
+}

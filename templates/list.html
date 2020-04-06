@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+
+
+{% block customcss %}
+{% endblock customcss %}
+
+{% block content %}
+
+<div class ="top_title">
+    <h1>ホーム</h1>
+</div>
+
+<div class='container'>
+    {% for item in object_list %}
+    
+    <div class="alert alert-success" role="alert">
+        <p><a href="{% url 'allprofile' item.pk %}">Name：{{item.author}}</a></p>
+
+        {% if item.title%}
+            <p class="title">{{item.title}}</p>
+        {%else%}
+        {%endif%}
+
+        {% if item.content%}
+        <p class="content">{{item.content}}</p>
+        {%else%}
+        {%endif%}
+
+        {% if item.images%}
+        <p class="img"><img src='{{item.images.url}}' ></p>
+        {% else %}
+        {% endif %}
+
+        <a href="{% url 'good' item.pk %}" class="btn btn-primary" role="button" aria-pressed="true">いいね：{{item.good}}</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}
+
+

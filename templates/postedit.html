@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class ="top_title">
+  <h1>投稿編集</h1>
+</div>
+
+{% if user.is_authenticated %}
+<div id="create" class="col-md-6 offset-md-3">
+  <form action='' method='POST' enctype="multipart/form-data">{% csrf_token %}
+  <p class="create_title">{{ form.title}}</p>
+  <p class="create_content">{{ form.content}}</p>
+  <p class="create_img">{{ form.images}}</p>
+  <input type='hidden' name='author' value='{{ user.username }}'>
+  <input type='submit' value='更新する'>
+  </form>
+
+</div>
+
+
+
+{% else %}
+ログインしてください
+{% endif %}
+{% endblock content %}
